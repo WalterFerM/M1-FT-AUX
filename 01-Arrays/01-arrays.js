@@ -55,21 +55,46 @@ function sumaDeArrays(array) {
     // OJO: Si el elemento dentro del array que ingresa por prop, ya es de tipo number, deben devolverlo como tal dentro del array que retornan.
 
 let solv = []
-
+array.forEach(function(element){
+    if(Array.isArray(element)){
+        let suma = element[0] + element[1];
+        solv.push(suma);
+    } else {
+        if(typeof element === 'number'){
+            solv.push(element);
+        }
+    }
+})
+// console.log(sum);
+// console.log(solv)
+return solv;
 };
 
-let t1 = [[1, 3], [10, 20], [4, 5], 2];
-// // let t2 = [[5, 5], 4, [10, 15], [25, 10]];
-console.log(sumaDeArrays(t1));
+// let t1 = [[1, 3], [10, 20], [4, 5], 2];
+// // // let t2 = [[5, 5], 4, [10, 15], [25, 10]];
+// console.log(sumaDeArrays(t1));
 
 function mismoValorMismosElementos(numero, divisor) {
     // Tiene que devolver un array con la misma cantidad de elementos que el valor del divisor
     // Todos los elementos deben tener el mismo valor
     // OJO: Si el resultado de la division no es un entero, deben devolver false
 
-
+    let res = [];
+    
+    let num = numero / divisor;
+    if(num%1 === 0){
+        while(divisor){
+            // console.log(divisor);
+            res.push(num);
+            divisor--;
+        }
+    } else return false;
+    return res;
 };
 
+// let numero = 13
+// let divisor = 7
+// console.log(mismoValorMismosElementos(numero, divisor))
 
 function elementoMenorYMayor(array) {
     // El Array recibido por props es un array que contienen numeros
