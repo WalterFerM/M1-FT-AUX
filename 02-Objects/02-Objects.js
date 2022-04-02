@@ -61,30 +61,32 @@ function crearClaseLibro() {
 }
 
 // Objeto de ejemplo:
-const hogwarts = {
-  staff: {
-    headmaster: {
-      name: "Albus Percival Wulfric Brian Dumbledore",
-    },
-    keeperOfKeys: {
-      name: "Rubeus Hagrid",
-    },
-    potionsMaster: {
-      name: "Severus Snape",
-    },
-  },
-};
+// const hogwarts = {
+//   staff: {
+//     headmaster: {
+//       name: "Albus Percival Wulfric Brian Dumbledore",
+//     },
+//     keeperOfKeys: {
+//       name: "Rubeus Hagrid",
+//     },
+//     potionsMaster: {
+//       name: "Severus Snape",
+//     },
+//   },
+// };
 const printStaff = function (objeto) {
   // Retornar un arreglo que contenga los strings indicando el titulo y nombre de cada miembro del staff
   // de esta forma "The headmaster is Albus Percival Wulfric Brian Dumbledore" 
   // el arreglo debe mantener el orden que posee el staff del objeto.
   let arr = [];
   for(key in objeto.staff){
-    console.log(key);
-    console.log(objeto.staff[key].name);
+    // console.log(key);
+    // console.log(objeto.staff[key].name);
     arr.push('The ' + key + ' is ' + objeto.staff[key].name);
   }
   return arr;
 };
-console.log(printStaff(hogwarts))
-module.exports = { crearClaseLibro, printStaff };
+// console.log(printStaff(hogwarts))
+module.exports = { 
+  crearClaseLibro, printStaff 
+};
